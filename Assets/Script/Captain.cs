@@ -18,7 +18,7 @@ public class Captain : MonoBehaviour
         hintText.gameObject.SetActive(false);
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
@@ -33,8 +33,8 @@ public class Captain : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             inRange = false;
+            hintText.text = interactText;
             hintText.gameObject.SetActive(false);
-            myObject.SetActive(false);
         }
     }
     void Update()

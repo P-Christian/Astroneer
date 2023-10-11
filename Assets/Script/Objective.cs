@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using TMPro;
 using UnityEngine;
 
-public class SetActive : MonoBehaviour
+public class Objective : MonoBehaviour
 {
-    public GameObject myObject; // Reference to the GameObject you want to manipulate
+    public TextMeshProUGUI tutorialText;
+    public GameObject myObject;
+
     private Transform playerTransform;
     private bool inRange = false;
     void Start()
@@ -27,19 +29,12 @@ public class SetActive : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             inRange = false;
-            myObject.SetActive(false);
+            myObject.SetActive(true);
         }
     }
 
     void Update()
     {
-        if (inRange && Input.GetKeyDown(KeyCode.E))
-        {
-            myObject.SetActive(true);
-        }
-        if (inRange && Input.GetKeyDown(KeyCode.R))
-        {
-            myObject.SetActive(false);
-        }
+       
     }
 }

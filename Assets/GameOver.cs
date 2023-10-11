@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public string targetSceneName;
     public void QuitGame()
     {
-        Application.Quit();
+        SceneManager.LoadScene(targetSceneName);
     }
 }

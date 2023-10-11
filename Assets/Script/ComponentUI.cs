@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class ComponentUI : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI componentText; 
+    [SerializeField] TextMeshProUGUI componentText;
     void Start()
     {
         componentText = GetComponent<TextMeshProUGUI>();
