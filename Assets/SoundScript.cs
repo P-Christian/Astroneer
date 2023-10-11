@@ -7,17 +7,6 @@ public class SoundScript : MonoBehaviour
     public AudioSource walk;
     public AudioSource run;
     public AudioSource attack;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     void walkSound()
     {
@@ -25,7 +14,7 @@ public class SoundScript : MonoBehaviour
     }
     void runSound()
     {
-        rune.Play();
+        run.Play();
     }
     void attackSound()
     {
