@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SoundScript : MonoBehaviour
 {
+    public AudioSource walk;
     public AudioSource run;
-    public AudioSource rune;
     public AudioSource attack;
     // Start is called before the first frame update
     void Start()
