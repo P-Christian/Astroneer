@@ -10,7 +10,15 @@ public class GiveValue : MonoBehaviour
 
     public void Start()
     {
-        int newText = StaticData.valueToKeep;
-        componentText.text = Convert.ToString(newText);
+        string newText = StaticData.valueToKeep;
+        if (newText == "0")
+        {
+            componentText.text = "Collected Components: 0/8";
+        }
+        else
+        {
+            componentText.text = "Collected Components: " + newText + "/8";
+        }
+        
     }
 }

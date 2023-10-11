@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.ComponentModel;
 
 public class SceneInteractable : MonoBehaviour
 {
     public string interactText = "Press E to interact";
     public string targetSceneName;
     private Transform playerTransform; // Reference to the player's transform
-
+    
     public TextMeshProUGUI hintText;
     private bool inRange = false;
 

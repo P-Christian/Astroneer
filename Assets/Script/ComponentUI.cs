@@ -18,6 +18,14 @@ public class ComponentUI : MonoBehaviour
     {
         componentText.text = playerInventory.NumOfComponents.ToString();
         string dataToKeep = componentText.text;
-        StaticData.valueToKeep = Convert.ToInt32(dataToKeep);
+        StaticData.valueToKeep = dataToKeep;
+        if (dataToKeep == "0" )
+        {
+            componentText.text = "Collected Components: 0/8";
+        } else
+        {
+            componentText.text = "Collected Components: " + dataToKeep + "/8";
+        }
+        
     }
 }
