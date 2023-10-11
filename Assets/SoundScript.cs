@@ -21,11 +21,11 @@ public class SoundScript : MonoBehaviour
 
     void walkSound()
     {
-        run.Play();
+        walk.Play();
     }
     void runSound()
     {
-        rune.Play();
+        run.Play();
     }
     void attackSound()
     {
