@@ -12,7 +12,7 @@ public class chaseState : StateMachineBehaviour
     {
         agent = animator.GetComponent<UnityEngine.AI.NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        agent.speed = 18.5f;
+        agent.speed = 15.5f;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -21,7 +21,7 @@ public class chaseState : StateMachineBehaviour
         agent.SetDestination (player.position);
 
         float distance = Vector3.Distance(player.position, animator.transform.position);
-       if (distance > 80)
+       if (distance > 50)
        {
         animator.SetBool("isChasing", false);
        }
