@@ -59,13 +59,13 @@ public class ComponentScript : MonoBehaviour
         }
     }
 
-    private void SaveState()
+    public void SaveState()
     {
         PlayerPrefs.SetInt(id, 10);
         PlayerPrefs.Save();
     }
 
-    private void LoadState()
+    public void LoadState()
     {
         if (PlayerPrefs.HasKey(id))
         {
