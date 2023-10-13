@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     {
         if(gameHasEnded == false)
         {
-            
+            StaticData.valueToKeep = "0";
             PlayerPrefs.DeleteAll();
             gameHasEnded = true;
             Debug.Log("Game Over");
