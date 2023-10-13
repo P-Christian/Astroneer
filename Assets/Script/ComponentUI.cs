@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class ComponentUI : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI componentText;
+
+    private PlayerInv playerInventory;
     void Start()
     {
         componentText = GetComponent<TextMeshProUGUI>();
@@ -26,6 +28,10 @@ public class ComponentUI : MonoBehaviour
         {
             componentText.text = "Collected Components: " + dataToKeep + "/8";
         }
-        
+
+        if (playerInventory != null && playerInventory.NumOfComponents == 8)
+        {
+            componentText.text = "Go to 1st Floor and Escape the ship";
+        }
     }
 }

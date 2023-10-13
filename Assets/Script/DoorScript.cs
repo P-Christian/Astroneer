@@ -27,6 +27,8 @@ public class DoorScript : MonoBehaviour
             {
                 Debug.Log("Door can be opened!");
                 SceneManager.LoadScene(targetSceneName);
+                StaticData.valueToKeep = "0";
+                PlayerPrefs.DeleteAll();
             } else {
                     Debug.Log("You need at least 8 components to open this door.");
                 }
