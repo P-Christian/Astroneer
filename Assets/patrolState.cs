@@ -16,7 +16,7 @@ public class patrolState : StateMachineBehaviour
         agent = animator.GetComponent<UnityEngine.AI.NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         timer =0;
-        agent.speed = 7.5f;
+        agent.speed = 9.5f;
         GameObject go = GameObject.FindGameObjectWithTag("Waypoints");
         foreach(Transform t in go.transform)
         wayPoints.Add(t);

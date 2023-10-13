@@ -12,7 +12,7 @@ public class chaseState : StateMachineBehaviour
     {
         agent = animator.GetComponent<UnityEngine.AI.NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        agent.speed = 15.5f;
+        agent.speed = 18.5f;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
