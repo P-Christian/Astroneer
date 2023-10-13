@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ComponentScript : MonoBehaviour
 {
@@ -22,8 +21,7 @@ public class ComponentScript : MonoBehaviour
     private void Start()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform; // Find the player's transform
-        LoadState();
-        playerInventory = GetComponent<PlayerInv>(); // Assuming PlayerInv is attached to the same GameObject
+        LoadState(); // Load the state when the component starts
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,10 +29,10 @@ public class ComponentScript : MonoBehaviour
         PlayerInv otherPlayerInventory = other.GetComponent<PlayerInv>();
         if (otherPlayerInventory != null && !collected)
         {
+            SaveState();
             collected = true;
             gameObject.SetActive(false);
             otherPlayerInventory.ComponentsCollected();
-            SaveState();
         }
 
         if (other.CompareTag("Player"))
@@ -53,58 +51,23 @@ public class ComponentScript : MonoBehaviour
 
     void Update()
     {
-        if (inRange && Input.GetKeyDown(KeyCode.E))
-        {
-            gameObject.SetActive(false);
-        }
+        // Your update logic here if needed
     }
 
     public void SaveState()
     {
-        PlayerPrefs.SetInt(id, 10);
+        // Save the component ID in PlayerPrefs
+        PlayerPrefs.SetString(id, id);
         PlayerPrefs.Save();
     }
 
     public void LoadState()
     {
+        // Check if the component ID is present in PlayerPrefs
         if (PlayerPrefs.HasKey(id))
         {
             collected = true;
-
-            // Check if the component should be enabled or disabled based on its collected state
             gameObject.SetActive(false);
         }
-    }
-
-    private void OnDisable()
-    {
-        SceneManager.sceneUnloaded += OnSceneUnloaded;
-    }
-
-    private void OnSceneUnloaded(Scene scene)
-    {
-        // Save the state when a scene is unloaded
-        SaveState();
-    }
-
-    private void OnEnable()
-    {
-        SceneManager.sceneUnloaded -= OnSceneUnloaded;
-    }
-
-    private void OnApplicationQuit()
-    {
-        // Reset the state when the application is quitting
-        ResetState();
-    }
-
-    public void ResetState()
-    {
-        collected = false;
-
-        // Enable the component when resetting the state
-        gameObject.SetActive(true);
-
-        PlayerPrefs.DeleteKey(id);
     }
 }
