@@ -8,13 +8,6 @@ public class GameManager : MonoBehaviour
     
     bool gameHasEnded = false;
     public float restartDelay = 1;
-    private PlayerInv playerInventory;
-    [SerializeField] GameObject inventory;
-
-    private void Awake()
-    {
-        playerInventory = inventory.GetComponent<PlayerInv>();
-    }
     public void EndGame()
     {
         if(gameHasEnded == false)

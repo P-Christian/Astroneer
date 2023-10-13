@@ -8,6 +8,6 @@ public class AnimationScript : MonoBehaviour
     public void OnAnimationFinished()
     {
         // Load the next scene when the animation is finished.
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Victory");
     }
 }
