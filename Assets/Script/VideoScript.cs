@@ -21,4 +21,18 @@ public class VideoScript : MonoBehaviour
     {
         SceneManager.LoadScene(targetSceneName);
     }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            myVideoPlayer.Stop();
+            LoadNextScene();
+        }
+    }
+
+    public void LoadNextScene()
+    {
+        SceneManager.LoadScene(targetSceneName);
+    }
 }
